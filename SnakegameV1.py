@@ -27,7 +27,7 @@ assets['FLA'] = pygame.transform.scale(assets['apple'],(tmnh_bloco_map*4, tmnh_b
 assets['FLU'] = pygame.image.load('Fluminense_FC_escudo.png').convert()
 assets['FLU'] = pygame.transform.scale(assets['FLU'],(tmnh_bloco_map*4, tmnh_bloco_map*4))
 assets['som'] = pygame.mixer.music.load('assets/snd/tgfcoder-FrozenJam-SeamlessLoop.ogg')
-assets['som'] = pygame.mixer.music.set_volume(0.4)
+
 
 #Criando cobra
 
