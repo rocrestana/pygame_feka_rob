@@ -28,3 +28,30 @@ assets['FLU'] = pygame.image.load('Fluminense_FC_escudo.png').convert()
 assets['FLU'] = pygame.transform.scale(assets['FLU'],(tmnh_bloco_map*4, tmnh_bloco_map*4))
 assets['som'] = pygame.mixer.music.load('assets/snd/tgfcoder-FrozenJam-SeamlessLoop.ogg')
 assets['som'] = pygame.mixer.music.set_volume(0.4)
+
+#Criando cobra
+
+class Snake(pygame.sprite.Sprite):
+
+    def _init_(self):
+        # Construtor da classe mãe (Sprite).
+        pygame.sprite.Sprite._init_(self)
+
+        self.x, self.y = tmnh_bloco_map, tmnh_bloco_map
+        self.xdir = 1
+        self.ydir = 0
+        self.image = assets['cobra']  # Directly assign the image from assets
+        self.rect = self.image.get_rect()
+        self.body = [pygame.Rect(self.x, self.y, tmnh_bloco_map, tmnh_bloco_map)]
+        self.head = pygame.Rect(self.x - tmnh_bloco_map, self.y, tmnh_bloco_map, tmnh_bloco_map)
+        self.rect.centerx = WIDTH / 2
+        self.rect.bottom = HEIGHT - 10
+
+    def update(self):
+        self.body.append(self.head)  # Adding the head to the body
+        for i in range(len(self.body) - 1):  # for each block of the body, move one step ahead relative to its previous
+            self.body[i].x = self.body[i + 1].x
+            self.body[i].y = self.body[i + 1].y
+        self.head.x += self.xdir * tmnh_bloco_map  # moving the head 1 square
+        self.head.y += self.ydir * tmnh_bloco_map
+        self.body.remove(self.head)
