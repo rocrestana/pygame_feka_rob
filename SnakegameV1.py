@@ -143,3 +143,7 @@ while game:
         window.blit(assets['cobra'], square)
 
     window.blit(score,score_rect) #Desenha o placar
+    
+    if snake.head.x == apple.x and snake.head.y == apple.y:
+        snake.body.append(pygame.Rect(snake.head.x, snake.head.y, tmnh_bloco_map, tmnh_bloco_map))
+        apple = Apple()
