@@ -55,3 +55,12 @@ class Snake(pygame.sprite.Sprite):
         self.head.x += self.xdir * tmnh_bloco_map  # moving the head 1 square
         self.head.y += self.ydir * tmnh_bloco_map
         self.body.remove(self.head)
+class Apple:
+    def __init__(self):
+        self.x = int(random.randint (0,WIDTH)/tmnh_bloco_map)*tmnh_bloco_map
+        self.y = int(random.randint(0,HEIGHT)/tmnh_bloco_map)*tmnh_bloco_map
+        self.image = assets['apple']  
+        self.rect = self.image.get_rect()
+        self.rect = pygame.Rect(self.x,self.y,tmnh_bloco_map,tmnh_bloco_map)
+    def update(self):
+        window.blit(assets['apple'], self.rect)
