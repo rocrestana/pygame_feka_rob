@@ -96,3 +96,32 @@ while inicio:
     window.blit(text, (10, 10))
     window.blit(text2, (10,100))
     pygame.display.flip()  # Atualiza a tela
+
+while game:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game = False
+            # pygame.quit()
+        if game:
+            if event.type == pygame.KEYDOWN:
+                keys_down[event.key] = True
+                if event.key == pygame.K_LEFT:
+                    snake.ydir = 0
+                    snake.xdir = -1
+                if event.key == pygame.K_RIGHT:
+                    snake.ydir = 0
+                    snake.xdir = 1
+                if event.key == pygame.K_UP:
+                    snake.ydir = -1
+                    snake.xdir = 0
+                if event.key == pygame.K_DOWN:
+                    snake.ydir = 1
+                    snake.xdir = 0
+
+    if game:  # Verifica apenas se estivermos jogando
+        snake.update()
+        for square in snake.body[1:]:  # Começa do segundo elemento para evitar a cabeça
+            if snake.head.colliderect(square):  # Verifica se a cabeça colidiu com algum bloco do corpo
+                game = False
+                Fim = True
+                break  # Sai do loop assim que encontrar uma colisão
