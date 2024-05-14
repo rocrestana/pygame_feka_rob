@@ -125,3 +125,21 @@ while game:
                 game = False
                 Fim = True
                 break  # Sai do loop assim que encontrar uma colisão
+        if not 0 <= snake.head.x < WIDTH or not 0 <= snake.head.y < HEIGHT:
+            game = False  # Se a cabeça sair dos limites do mapa, a cobra morre
+            Fim = True
+
+
+    window.fill((0, 0, 0))  # Limpa a tela
+    window.blit(assets['fundo'], (0, 0))  # Desenha o fundo
+
+    # Desenha a cabeça da cobra
+    window.blit(assets['cobra'], snake.head)
+    window.blit(assets['apple'], apple.rect)
+    # Desenha o corpo da cobra
+    score = font.render(f'{len(snake.body)+1}',True,'white')
+    
+    for square in snake.body:
+        window.blit(assets['cobra'], square)
+
+    window.blit(score,score_rect) #Desenha o placar
