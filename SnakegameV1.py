@@ -64,3 +64,9 @@ class Apple:
         self.rect = pygame.Rect(self.x,self.y,tmnh_bloco_map,tmnh_bloco_map)
     def update(self):
         window.blit(assets['apple'], self.rect)
+        
+def Cria_Mapa():
+    for x in range(0, WIDTH, tmnh_bloco_map):
+        for y in range(0, HEIGHT, tmnh_bloco_map):
+            rect = pygame.Rect(x, y, tmnh_bloco_map, tmnh_bloco_map)
+            pygame.draw.rect(window,(255,255,255,0.5), rect, 1)
