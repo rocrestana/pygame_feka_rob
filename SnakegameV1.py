@@ -70,3 +70,29 @@ def Cria_Mapa():
         for y in range(0, HEIGHT, tmnh_bloco_map):
             rect = pygame.Rect(x, y, tmnh_bloco_map, tmnh_bloco_map)
             pygame.draw.rect(window,(255,255,255,0.5), rect, 1)
+
+score = font.render('1',True,"white")
+score_rect = score.get_rect(center =(WIDTH/2, HEIGHT/20))
+Cria_Mapa()
+
+apple = Apple()
+snake = Snake()
+apple = Apple()  # Movido para fora do loop principal
+inicio = True
+game = False
+Fim = False
+while inicio:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+        if event.type == pygame.KEYDOWN:
+            game = True  # Inicia o jogo apenas quando o usuário pressionar uma tecla
+            inicio = False  # Sai do loop de tela inicial
+            break  # Sai do loop de eventos
+    window.fill((0, 0, 0))  # Limpa a tela
+    window.blit(assets['maracana'], (0, 0))  # Desenha o fundo da tela inicial
+    text = font.render("FLA X FLU/SNAKE GAME", True, "Green")
+    text2 = font4.render("APERTE QUALQUER TECLA PARA INICIAR!!!!!", True, "Red")
+    window.blit(text, (10, 10))
+    window.blit(text2, (10,100))
+    pygame.display.flip()  # Atualiza a tela
