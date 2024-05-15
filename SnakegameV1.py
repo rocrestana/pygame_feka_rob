@@ -147,3 +147,48 @@ while game:
     if snake.head.x == apple.x and snake.head.y == apple.y:
         snake.body.append(pygame.Rect(snake.head.x, snake.head.y, tmnh_bloco_map, tmnh_bloco_map))
         apple = Apple()
+    pygame.display.flip()
+    tempo.tick(7)
+
+# Após a morte da cobra:
+while Fim: 
+    #Jogador derrotado:
+    if (len(snake.body)+1) <=10: 
+        window.fill((0, 0, 0))
+        txt = font.render("VITÓRIA RUBRO-NEGRA!!", True, "Red")
+        txt2 = font2.render("O seu placar final foi de:", True, "white")
+        txt3 =  font3.render(f'{len(snake.body)+1}', True, "red")
+        window.blit(assets['FLA'], (WIDTH/2-100,500))
+        window.blit(txt,(40,10))
+        window.blit(txt2,(WIDTH/2-275,HEIGHT/3 - 50))
+        window.blit(txt3,(WIDTH/2-50,HEIGHT/3+50))
+        pygame.display.flip() 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            elif event.type == pygame.KEYDOWN:
+                pygame.quit()
+
+    #Jogador vencedor:
+    elif (len(snake.body)+1) > 10:
+        window.fill((0, 0, 0))
+        txt = font.render("VITÓRIA TRICOLOR!!!", True, "Green")
+        txt2 = font2.render("O seu placar final foi de:", True, "white")
+        txt3 =  font2.render(f'{len(snake.body)+1}', True, "red")
+        window.blit(assets['FLU'], (WIDTH/2-100,500))
+        window.blit(txt,(40,10))
+        window.blit(txt2,(WIDTH/2-275,HEIGHT/3 - 50))
+        window.blit(txt3,(WIDTH/2-50,HEIGHT/3+50))
+        pygame.display.flip() 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            elif event.type == pygame.KEYDOWN:
+                pygame.quit()
+                
+    pygame.display.flip()
+    tempo.tick(7)
+
+    Cria_Mapa()
+
+pygame.quit()   
