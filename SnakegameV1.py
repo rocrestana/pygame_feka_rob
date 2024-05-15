@@ -26,7 +26,7 @@ assets['fundo'] =  pygame.image.load('campo.png').convert()
 assets['fundo'] = pygame.transform.scale(assets['fundo'], (WIDTH,HEIGHT))
 assets['cobra'] = pygame.image.load('Jogador do Fluzao.webp').convert()
 assets['cobra']= pygame.transform.scale(assets['cobra'], (40,40))
-assets['apple'] = pygame.image.load('lixo.png').convert()
+assets['apple'] = pygame.image.load('Fla.png').convert()
 assets['apple']= pygame.transform.scale(assets['apple'],(tmnh_bloco_map,tmnh_bloco_map))
 assets['maracana'] = pygame.image.load('OIG2.jpg').convert()
 assets['maracana'] = pygame.transform.scale(assets['maracana'],(WIDTH,HEIGHT))
@@ -116,16 +116,16 @@ while game:
         if game:
             if event.type == pygame.KEYDOWN:
                 keys_down[event.key] = True
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                     snake.ydir = 0
                     snake.xdir = -1
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                     snake.ydir = 0
                     snake.xdir = 1
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
                     snake.ydir = -1
                     snake.xdir = 0
-                if event.key == pygame.K_DOWN:
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                     snake.ydir = 1
                     snake.xdir = 0
 
