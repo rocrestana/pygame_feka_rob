@@ -114,16 +114,16 @@ while game:
         if game:
             if event.type == pygame.KEYDOWN:
                 keys_down[event.key] = True
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                     snake.ydir = 0
                     snake.xdir = -1
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                     snake.ydir = 0
                     snake.xdir = 1
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
                     snake.ydir = -1
                     snake.xdir = 0
-                if event.key == pygame.K_DOWN:
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                     snake.ydir = 1
                     snake.xdir = 0
 
