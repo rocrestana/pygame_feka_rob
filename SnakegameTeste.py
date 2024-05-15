@@ -26,7 +26,7 @@ assets['fundo'] =  pygame.image.load('campo.png').convert()
 assets['fundo'] = pygame.transform.scale(assets['fundo'], (WIDTH,HEIGHT))
 assets['cobra'] = pygame.image.load('Jogador do Fluzao.webp').convert()
 assets['cobra']= pygame.transform.scale(assets['cobra'], (40,40))
-assets['apple'] = pygame.image.load('lixo.png').convert()
+assets['apple'] = pygame.image.load('Fla.png').convert()
 assets['apple']= pygame.transform.scale(assets['apple'],(tmnh_bloco_map,tmnh_bloco_map))
 assets['maracana'] = pygame.image.load('OIG2.jpg').convert()
 assets['maracana'] = pygame.transform.scale(assets['maracana'],(WIDTH,HEIGHT))
@@ -38,9 +38,9 @@ assets['som'] = pygame.mixer.music.load("somflu.mp3")
 #Criando a cobra
 class Snake(pygame.sprite.Sprite):
 
-    def __init__(self):
+    def _init_(self):
         # Construtor da classe mãe (Sprite).
-        pygame.sprite.Sprite.__init__(self)
+        pygame.sprite.Sprite._init_(self)
 
         self.x, self.y = tmnh_bloco_map, tmnh_bloco_map
         self.xdir = 1
@@ -63,7 +63,7 @@ class Snake(pygame.sprite.Sprite):
      
 
 class Apple:
-    def __init__(self):
+    def _init_(self):
         self.x = int(random.randint (0,WIDTH)/tmnh_bloco_map)*tmnh_bloco_map
         self.y = int(random.randint(0,HEIGHT)/tmnh_bloco_map)*tmnh_bloco_map
         self.image = assets['apple']  
@@ -116,16 +116,16 @@ while game:
         if game:
             if event.type == pygame.KEYDOWN:
                 keys_down[event.key] = True
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                     snake.ydir = 0
                     snake.xdir = -1
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                     snake.ydir = 0
                     snake.xdir = 1
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_UP or event.key == pygame.K_w:
                     snake.ydir = -1
                     snake.xdir = 0
-                if event.key == pygame.K_DOWN:
+                if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                     snake.ydir = 1
                     snake.xdir = 0
 
