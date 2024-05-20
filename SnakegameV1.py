@@ -5,7 +5,6 @@ from classes import *
 from assets import *
 from dimensoes import *
 from criacao_de_mapa import *
-# pip install -r requirements.txt
 
 
 pygame.init()
