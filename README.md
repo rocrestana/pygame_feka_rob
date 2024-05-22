@@ -27,6 +27,10 @@ Mover-se para cima: Seta superior
 
 Mover-se para baixo: Seta inferior
 
+Vale ressaltar que, a cada 5 maçãs comidas, a cobra aumenta sua velocidade.
+
+Além disso, existem dois finais possíveis. O primeiro uma vitória do Flamengo (Rubro negro), e a segunda do Fluminense(Tricolor). A saída irá variar com o número total de maçãs conquistadas pelo jogador.
+
 IMPORTANTE:
 
 A cobra não pode colidir com seu própio corpo, ou com os limites do mapa, caso ocorra o jogador perde o jogo.
