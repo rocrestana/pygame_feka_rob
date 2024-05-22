@@ -1,9 +1,9 @@
 # pygame_feka_rob
-Criadores: Felipe Fonseca Kalichsztein
+Criadores: Felipe Fonseca Kalichsztein, João Pedro Carvalho e Roberto Crestana
 
 EXECUTAR O ARQUIVO: MAIN.py
 
-Vídeo do jogo rodando: 
+Vídeo do jogo rodando: https://youtu.be/46Tv5wd6Owk
 
 The game was developed as a final assignment for a class called Software Design.
 
